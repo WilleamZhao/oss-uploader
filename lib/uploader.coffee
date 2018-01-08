@@ -9,6 +9,7 @@ module.exports = class Uploader
     @accessKeyId = cfg.accessKeyId
     @accessKeySecret = cfg.accessKeySecret
     @bucket = cfg.bucket
+    @path = cfg.path
 
   getKey: (buffer) ->
     fsHash = crypto.createHash('md5')
@@ -17,7 +18,8 @@ module.exports = class Uploader
 
   upload: (buffer, ext, callback) ->
     key = @getKey(buffer)
-    filename = key
+    filename = @path + "/" if @path
+    filename += key
     filename += ".#{ext}" if typeof ext is 'string' and ext
     client =  new OSS({
       region: @region,

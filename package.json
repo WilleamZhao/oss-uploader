@@ -1,5 +1,5 @@
 {
-  "name": "oss-uploader",
+  "name": "oss-uploader-zcj",
   "main": "./lib/main",
   "version": "0.9.0",
   "description": "aliyun oss uploader plugin for markdown-assistant",
@@ -13,14 +13,14 @@
     "qiniu-uploader"
   ],
   "author": {
-    "name": "airclear",
-    "email": "lihang4work@gmail.com",
-    "url": "https://github.com/airclear"
+    "name": "willeam",
+    "email": "zhaochunjie.love@163.com",
+    "url": "https://blog.sourcod.com"
   },
   "activationCommands": {
-    "atom-workspace": "oss-uploader:toggle"
+    "atom-workspace": "oss-uploader-zcj:toggle"
   },
-  "repository": "https://github.com/airclear/oss-uploader",
+  "repository": "https://github.com/WilleamZhao/oss-uploader.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

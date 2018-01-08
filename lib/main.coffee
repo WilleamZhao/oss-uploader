@@ -29,10 +29,15 @@ module.exports =
       type: 'string'
       description: "OSS domain"
       default: ""
+    path:
+      title: "path"
+      type: "string"
+      description: "OSS path"
+      default: ""
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.commands.add 'atom-workspace', 'oss-uploader:toggle': => @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'oss-uploader-zcj:toggle': => @toggle()
 
   deactivate: ->
     @subscriptions.dispose()
@@ -45,11 +50,12 @@ module.exports =
   #   instance().upload(imagebuffer, '.png', (err, retData)->)
   #   * retData.url should be the online url
   instance: ->
-    region = atom.config.get('oss-uploader.region')
-    accessKeyId = atom.config.get('oss-uploader.accessKeyId')
-    accessKeySecret = atom.config.get('oss-uploader.accessKeySecret')
-    domain = atom.config.get('oss-uploader.domain')?.trim()
-    bucket = atom.config.get('oss-uploader.bucket')
+    region = atom.config.get('oss-uploader-zcj.region')
+    accessKeyId = atom.config.get('oss-uploader-zcj.accessKeyId')
+    accessKeySecret = atom.config.get('oss-uploader-zcj.accessKeySecret')
+    domain = atom.config.get('oss-uploader-zcj.domain')?.trim()
+    bucket = atom.config.get('oss-uploader-zcj.bucket')
+    path = atom.config.get('oss-uploader-zcj.path')
 
     if domain?.indexOf('http') < 0
       domain = "http://#{domain}"
@@ -61,6 +67,7 @@ module.exports =
       accessKeyId: accessKeyId,
       accessKeySecret: accessKeySecret,
       domain: domain,
-      bucket : bucket
+      bucket : bucket,
+      path: path
     }
     return new Uploader(cfg)

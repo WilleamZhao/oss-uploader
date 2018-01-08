@@ -1,4 +1,5 @@
-# oss-uploader
+forked from [airclear/oss-uploader](https://github.com/airclear/oss-uploader)
+# oss-uploader-zcj
 
 aliyun oss uploader plugin for atom markdown-assistant. Inspired by [qiniu-uploader](https://github.com/knightli/qiniu-uploader)
 
@@ -10,6 +11,3 @@ aliyun oss uploader plugin for atom markdown-assistant. Inspired by [qiniu-uploa
 ## Settings in markdown-assistant
 
 ![settings in markdown-assistant](http://zdoc.oss-cn-beijing.aliyuncs.com/2a971b57d0b6a79832395c042b6e6063.png)
-
-
-
